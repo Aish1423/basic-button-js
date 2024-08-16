@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mult-button</title>
+    <style>
+        .div1{
+            height: 130px;
+            width: 190vh;
+            background-color: red;
+            margin-left: 80px;
+        }
+        .div2{
+            height: 110px;
+            width: 190vh;
+            background-color: aqua;
+            margin-left: 80px;
+
+        }
+        .parent{
+            height: 200px;
+            width: 190vh;
+            background-color: red;
+            margin-left: 80px;
+            display: flex;
+
+        }
+        .child1{
+            height: 100px;
+            width: 150px;
+            background-color: white;
+            margin-left: 250px;
+        }
+        .child2{
+            height: 100px;
+            width: 150px;
+            background-color: white;
+            margin-left: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <br> <br>
+        <div class="div1"> <input id="copyText" style="margin-left: 250px; margin-top: 50px;"> 
+        <input id="pasteText" style="margin-left: 200px; margin-top: 50px;">
+    </div>
+    <div class="div2"> 
+    <button onclick="copyPaste()" style="margin-left: 80px; margin-top: 50px;">button1</button> 
+    <button onclick="getMsg()" style="margin-left: 120px; margin-top: 50px;">button2</button>
+    <button onclick="copyData()" style="margin-left: 120px; margin-top: 50px;">button3</button>
+    <button onclick="copyNew()" style="margin-left: 120px; margin-top: 50px;">button4</button>
+    <button onclick="imgTag()" style="margin-left: 140px; margin-top: 50px;">button5</button>
+
+    </div>
+    <div class="parent">
+        <div  class="child1" id="id1"> hello </div>
+        <div   class="child2" id="id2">bye
+        </div>     
+    </div>
+<script>
+    function getMsg() {
+        alert(document.getElementById("copyText").value)
+        alert("hello")
+        alert("bye:)")
+        }
+    function  copyPaste() {
+        var a = document.getElementById("copyText").value
+        document.getElementById("pasteText").value=a
+    }
+    function copyData() {
+        var a = document.getElementById("copyText").value
+        document.getElementById("id2").innerText=a
+    }
+    function copyNew(){
+        var a = document.getElementById("copyText").value
+        document.getElementById("id1").innerText=`hello${a}${a}`
+    }
+    function imgTag(){
+        var a = document.getElementById("copyText").type="radio"
+        var a = document.getElementById("pasteText").type="checkbox"
+
+        document.getElementById("id2").style.background="url('images.jpg')"
+    }
+
+</script>
+    
+</body>
+</html>
